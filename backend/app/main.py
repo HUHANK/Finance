@@ -10,7 +10,7 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
 from . import config, db, jobs
-from .api import kline, news, profile, quotes, review, us, valuation, watchlist
+from .api import dca, kline, news, profile, quotes, review, us, valuation, watchlist
 
 logging.basicConfig(level=logging.INFO,
                     format="%(asctime)s %(levelname)s %(name)s: %(message)s")
@@ -40,6 +40,7 @@ app.include_router(valuation.router)
 app.include_router(news.router)
 app.include_router(profile.router)
 app.include_router(us.router)
+app.include_router(dca.router)
 
 # 生产态：托管前端构建产物（SPA 回退到 index.html）
 if os.path.isdir(config.FRONTEND_DIST):

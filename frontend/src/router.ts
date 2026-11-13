@@ -10,5 +10,6 @@ export default createRouter({
     { path: '/valuation', component: () => import('./views/ValuationView.vue'), meta: { title: '估值' } },
     { path: '/news', component: () => import('./views/NewsView.vue'), meta: { title: '新闻' } },
     { path: '/profile', component: () => import('./views/ProfileView.vue'), meta: { title: '详情' } },
+    { path: '/dca', component: () => import('./views/DcaView.vue'), meta: { title: '定投' } },
   ],
 })

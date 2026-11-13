@@ -77,6 +77,39 @@ export function fmtHand(hand: number | null | undefined): string {
   return String(Math.round(hand)) + '手'
 }
 
+export interface DcaCurvePoint {
+  date: string
+  cost: number
+  value: number
+  price: number
+}
+
+export interface DcaInvest {
+  date: string
+  price: number
+  amount: number
+  shares: number
+}
+
+export interface DcaBacktestResult {
+  code: string
+  name: string
+  start: string
+  end: string
+  period: string
+  amount: number
+  summary: {
+    invest_count: number
+    total_invested: number
+    final_value: number
+    profit: number
+    return_pct: number
+    annualized_pct: number | null
+  }
+  curve: DcaCurvePoint[]
+  invests: DcaInvest[]
+}
+
 /** 本地粗判是否 A 股交易时段（节假日不管，由后端数据兜底） */
 export function isTradingTimeNow(): boolean {
   const d = new Date()

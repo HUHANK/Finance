@@ -9,6 +9,7 @@
         <el-menu-item index="/valuation"><el-icon><Histogram /></el-icon>估值</el-menu-item>
         <el-menu-item index="/news"><el-icon><Document /></el-icon>新闻</el-menu-item>
         <el-menu-item index="/profile"><el-icon><Search /></el-icon>详情</el-menu-item>
+        <el-menu-item index="/dca"><el-icon><Wallet /></el-icon>定投</el-menu-item>
       </el-menu>
       <div class="clock">{{ clock }}</div>
     </el-aside>
@@ -21,7 +22,7 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
-import { TrendCharts, DataBoard, Histogram, Document, Search, Money } from '@element-plus/icons-vue'
+import { TrendCharts, DataBoard, Histogram, Document, Search, Money, Wallet } from '@element-plus/icons-vue'
 import { isTradingTimeNow } from './types'
 
 const route = useRoute()
